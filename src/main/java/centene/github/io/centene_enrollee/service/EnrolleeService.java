@@ -33,7 +33,7 @@ public class EnrolleeService {
     public EnrolleeDTO get(final Long id) {
         return enrolleeRepository.findById(id)
                 .map(this::mapToDTO)
-                .orElseThrow(CustomNotFoundException::new);
+                .orElseThrow(() -> new CustomNotFoundException("Enrollee by given ID is not found") );
     }
 
     //
