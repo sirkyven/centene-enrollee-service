@@ -1,0 +1,26 @@
+spring:
+  datasource:
+    url: "jdbc:postgresql://localhost:5432/enrollee_management_service"
+    username: centene
+    password: kforce
+  dbcp2:
+    max-wait-millis: 30000
+    validation-query: "SELECT 1"
+    validation-query-timeout: 30
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+server:
+  compression:
+    enabled: true
+  mime-types: text/html,text/xml,text/plain,text/css,text/javascript,application/javascript,application/json
+  min-response-size: 1024
+
+springdoc:
+  pathsToMatch: /api/**
